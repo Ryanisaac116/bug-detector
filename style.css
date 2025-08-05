@@ -1,0 +1,83 @@
+/* Custom styles for UI Analyser */
+
+body {
+  scroll-behavior: smooth;
+  font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;
+  background: linear-gradient(120deg, #f0f4f8 0%, #e0e7ef 100%);
+  color: #22223b;
+  min-height: 100vh;
+  margin: 0;
+}
+
+.tab-btn {
+  padding: 0.6rem 1.6rem;
+  font-weight: 600;
+  border-top-left-radius: 0.8rem;
+  border-top-right-radius: 0.8rem;
+  border-bottom-left-radius: 0.3rem;
+  border-bottom-right-radius: 0.3rem;
+  background: linear-gradient(90deg, #f3f4f6 60%, #e0e7ef 100%);
+  color: #374151;
+  outline: none;
+  margin-right: 0.7rem;
+  box-shadow: 0 2px 8px 0 rgba(60,60,110,0.04);
+  cursor: pointer;
+  border: none;
+  letter-spacing: 0.02em;
+  transition: background 0.3s, color 0.3s, box-shadow 0.3s, transform 0.15s;
+  position: relative;
+}
+.tab-btn:hover {
+  background: linear-gradient(90deg, #e0e7ef 60%, #dbeafe 100%);
+  color: #2563eb;
+  transform: translateY(-2px) scale(1.04);
+  box-shadow: 0 4px 16px 0 rgba(37,99,235,0.12);
+}
+.tab-btn:focus {
+  outline: 2px solid #2563eb;
+  outline-offset: 2px;
+}
+.tab-btn.active {
+  background: linear-gradient(90deg, #2563eb 60%, #3b82f6 100%);
+  color: #fff;
+  box-shadow: 0 6px 24px 0 rgba(37,99,235,0.15);
+  z-index: 2;
+  border-bottom: 2px solid #fff;
+}
+
+.tab-btn:hover {
+  background-color: #dbeafe;
+}
+.tab-btn:focus {
+  outline: none;
+}
+
+.tab-btn.active {
+  background-color: #2563eb;
+  color: #fff;
+  box-shadow: 0 1px 3px 0 rgba(0,0,0,0.1), 0 1px 2px 0 rgba(0,0,0,0.06);
+}
+.tab-content {
+  transition: opacity 0.5s, transform 0.5s;
+  background: #fff;
+  border-radius: 0 0 1.2rem 1.2rem;
+  box-shadow: 0 8px 32px 0 rgba(60,60,110,0.07);
+  padding: 2rem 2.5rem;
+  margin-top: -2px;
+  min-height: 180px;
+  opacity: 1;
+  transform: translateY(0);
+  animation: fadeIn 0.6s cubic-bezier(0.4,0,0.2,1);
+}
+.tab-content.hidden {
+  display: none;
+  opacity: 0;
+  transform: translateY(20px);
+}
+.animate-fade-in {
+  animation: fadeIn 0.6s ease-in;
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px) scale(0.98); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
